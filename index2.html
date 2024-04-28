@@ -6,73 +6,92 @@
     <title>Title and Button</title>
 
     <style>
-      body {
-        font-family: 'Roboto', sans-serif;
-        background-color: #f0f0f0;
-        margin: 30;
-        padding: 30;
-      }
-      
-      .container {
-        max-width: 1200px;
-        margin: 100px auto;
-        padding: 80px;
-        background-color: #fff;
-        border-radius: 10px;
-        box-shadow: 0 0 10px rgba(0,0,0,0.1);
-      }
-      h1 {
-        text-align: center;
-        color: #333;
-      }
-      .button {
-        display: block;
-        width: calc(50% -10px);
-        margin: 20px auto;
-        padding: 15px;
-        background-color: #4caf50;
-        color: white;
-        border: none;
-        border-radius: 5px;
-        text-decoration: none;
-        font-size: 16px;
-        cursor: pointer;
-        transition: background-color 0.3;
-        position: absolute;
-      }
-      .button:first-child {  /* Go back */
-        top: 10px;
-        left: 10px;
-      }
-      .button:last-child { /* Next Button */
-        bottom: 10px;
-        right: 10px;
-      }
-      button:hover {
-        background-color: #45a049;
-      }
-      .textbox {
-        display: block;
-        margin: 0 auto;
-        padding: 10px;
-        width: 250px;
-        border: 1px solid #ccc;
-        border-radius: 5px;
-        margin-bottom: 10px;
-        font-size: 16px;
-      }
+        body {
+            font-family: 'Roboto', sans-serif;
+            background-color: #f0f0f0;
+            margin: 0;
+            padding: 0;
+            display: flex;
+            justify-content: center;
+            align-items: center;
+            height: 100vh;
+        }
+
+        .container {
+            max-width: 500px;
+            padding: 40px;
+            background-color: #fff;
+            border-radius: 10px;
+            box-shadow: 0 0 10px rgba(0, 0, 0, 0.1);
+            text-align: center;
+        }
+
+        h1 {
+            margin-bottom: 20px;
+            color: #333;
+        }
+
+        .button-container {
+            display: flex;
+            justify-content: center;
+            margin-top: 30px;
+        }
+
+        .button {
+            display: inline-block;
+            padding: 12px 24px;
+            background-color: #4caf50;
+            color: white;
+            border: none;
+            border-radius: 5px;
+            text-decoration: none;
+            font-size: 16px;
+            cursor: pointer;
+            transition: background-color 0.3s;
+            margin: 0 10px;
+        }
+
+        .button:hover {
+            background-color: #45a049;
+        }
+
+        .textbox-label {
+            display: block;
+            text-align: left;
+            margin-bottom: 5px;
+            color: #555;
+        }
+
+        .textbox {
+            padding: 12px;
+            border-radius: 5px;
+            border: 1px solid #ccc;
+            margin-bottom: 20px;
+            width: 100%;
+            box-sizing: border-box;
+            font-size: 16px;
+            transition: border-color 0.3s;
+        }
+
+        .textbox:focus {
+            outline: none;
+            border-color: #4CAF50;
+        }
     </style>
 </head>
 <body>
-  <div class="container">
+<div class="container">
     <h1>Select dates of Flight</h1>
-    <label for="departure date" class="textbox-label">Date of Departure:</label>
-    <input type="text" class="textbox" placeholder="dd/mm/yyyy">
-    
-    <label for="arrival date" class="textbox-label">Date of Arrival:</label>
-    <input type="text" class="textbox" placeholder="dd/mm/yyyy">
-    <a href="index.html" class="button">Go back</a>
-    <a href="index3.html"class="button">Next</a>
-  </div>
+    <label for="departure-date" class="textbox-label">Date of Departure:</label>
+    <input type="text" id="departure-date" class="textbox" placeholder="dd/mm/yyyy">
+
+    <label for="arrival-date" class="textbox-label">Date of Arrival:</label>
+    <input type="text" id="arrival-date" class="textbox" placeholder="dd/mm/yyyy">
+
+    <div class="button-container">
+        <a href="index3.html" class="button">Next</a>
+        <a href="index.html" class="button">Go back </a>
+    </div>
+</div>
 </body>
 </html>
