@@ -5,14 +5,30 @@
     <meta name="viewport" content="width=device-width, initial-scale=1.0">
     <title>Title and Button</title>
 
-    <style> 
+    <style>
+      body {
+        font-family: 'Roboto', sans-serif;
+        background-color: #f0f0f0;
+        margin: 0;
+        padding: 0;
+      }
+      .container {
+        max-width: 600px;
+        margin: 50px auto;
+        padding: 20px;
+        background-color: #fff;
+        border-radius: 10px;
+        box-shadow: 0 0 10px rgba(0,0,0,0.1);
+      }
       h1 {
         text-align: center;
+        color: #333;
       }
       .button {
         display: block;
+        width: 100%
         margin: 20px auto;
-        padding: 10px 20px;
+        padding: 15px;
         background-color: #4caf50;
         color: white;
         border: none;
@@ -20,6 +36,10 @@
         text-decoration: none;
         font-size: 16px;
         cursor: pointer;
+        transition: background-color 0.3;
+      }
+      button:hover {
+        background-color: #45a049;
       }
       .textbox {
         display: block;
@@ -34,10 +54,12 @@
     </style>
 </head>
 <body>
+  <div class="container">
     <h1>Select dates of Flight</h1>
     <input type="text" class="textbox" placeholder="Enter departure date">
     <input type="text" class="textbox" placeholder="Enter return date">
     <a href="index.html" 
     class="button">Go back</a>
+    <a href="next.html" class="button">Next →</div>a>
 </body>
 </html>
