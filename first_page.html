@@ -1,0 +1,80 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Flight Comparison</title>
+    <link href="https://fonts.googleapis.com/css2?family=Roboto:wght@400;700&display=swap" rel="stylesheet">
+    <link href="./navbarCSS.css" rel="stylesheet">
+
+    <style>
+        /* CSS for styling the button */
+        .button {
+            background-color: #4CAF50; /* Green */
+            border: none;
+            color: white;
+            padding: 15px 32px;
+            text-align: center;
+            text-decoration: none;
+            display: inline-block;
+            font-size: 16px;
+            margin-top: 20px;
+            cursor: pointer;
+            border-radius: 5px;
+            font-family: 'Roboto', sans-serif;
+        }
+        body { 
+            text-align: center;
+            font-family: 'Roboto', sans-serif;
+            background-color: #f0f0f0; /* Light grey  - DONT MESS WITH BODY AND PADDING*/
+        }
+        h1, h2 {
+            margin: 20px 0;
+            color: #333; /* Dark grey */
+        }
+        .box {
+            background-color: #fff; /* White */
+            padding: 20px;
+            margin: 20px;
+            border-radius: 10px;
+            box-shadow: 0px 0px 10px rgba(0, 0, 0, 0.1); /* Shadow */
+        }
+        
+        input[type="text"] {
+            padding: 10px;
+            border-radius: 5px;
+            border: 1px solid #ccc;
+            margin: 5px;
+            width: 250px;
+        }
+    </style>
+</head>
+<body>
+    <div style="display: flex;">
+        <div class="side-nav">
+            <a href="#" class="logo">
+                <img src="./images/logo.png" class="logo-img">
+            </a>
+            <ul class="nav-links">
+                <li><a href="#"><img src="./images/house.svg" class="ticket-img"><p>Home</p></a></li>
+                <li><a href="#"><img src="./images/ticket.svg" class="ticket-img"><p>Tickets</p></a></li>
+                <li><a href="#"><img src="./images/gear.svg" class="ticket-img"><p>Settings</p></a></li>
+                <li><a href="#"><img src="./images/user.svg" class="ticket-img"><p>Profile</p></a></li>
+            </ul>
+        </div>
+        <div style="display: flex; justify-content: center; align-items: center; width: 100%;">
+            <div>
+                <h1>Select your flight</h1>
+                <div class="box">
+                    <input type="text" placeholder="Username"><br>
+                    <input type="text" placeholder="Password"><br>
+                    <a href="second_page.html" class="button">Login</a>
+                    <a href="third_page.html" class="button">Create Account</a>
+                </div>
+            </div>
+            
+        </div>
+    </div>
+    
+</body>
+</html>
