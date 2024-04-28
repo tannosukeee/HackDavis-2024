@@ -7,9 +7,53 @@
     <link href="https://fonts.googleapis.com/css2?family=Roboto:wght@400;700&display=swap" rel="stylesheet">
 
     <style>
-        /* CSS for styling the button */
+        /* General styling */
+        body {
+            font-family: 'Roboto', sans-serif;
+            background-color: #f0f0f0;
+            padding: 20px;
+            margin: 0;
+            display: flex;
+            justify-content: center;
+            align-items: center;
+            height: 100vh;
+        }
+
+        /* Container for the form */
+        .container {
+            background-color: #fff;
+            padding: 40px;
+            border-radius: 10px;
+            box-shadow: 0 0 10px rgba(0, 0, 0, 0.1);
+            max-width: 400px;
+            width: 100%;
+            text-align: center;
+        }
+
+        /* Form title */
+        h1 {
+            margin-bottom: 20px;
+            color: #333;
+        }
+
+        /* Input fields */
+        input[type="text"] {
+            padding: 12px;
+            border-radius: 5px;
+            border: 1px solid #ccc;
+            margin: 10px 0;
+            width: 100%;
+            box-sizing: border-box;
+            transition: border-color 0.3s;
+        }
+        input[type="text"]:focus {
+            outline: none;
+            border-color: #4CAF50; /* Green */
+        }
+
+        /* Buttons */
         .button {
-            background-color: #4CAF50; /* Green */
+            background-color: #4CAF50;
             border: none;
             color: white;
             padding: 15px 32px;
@@ -20,42 +64,33 @@
             margin-top: 20px;
             cursor: pointer;
             border-radius: 5px;
-            font-family: 'Roboto', sans-serif;
+            transition: background-color 0.3s;
+            text-transform: uppercase;
+            font-weight: bold;
+            width: 45%; /* Adjusted button width */
+            box-shadow: 0 4px 6px rgba(0, 0, 0, 0.1);
         }
-        body { 
-            text-align: center;
-            font-family: 'Roboto', sans-serif;
-            background-color: #f0f0f0; /* Light grey */
-            padding: 20px;
+        .button:hover {
+            background-color: #45a049;
         }
-        h1, h2 {
-            margin: 20px 0;
-            color: #333; /* Dark grey */
-        }
-        .box {
-            background-color: #fff; /* White */
-            padding: 20px;
-            margin: 20px;
-            border-radius: 10px;
-            box-shadow: 0px 0px 10px rgba(0, 0, 0, 0.1); /* Shadow */
-        }
-        input[type="text"] {
-            padding: 10px;
-            border-radius: 5px;
-            border: 1px solid #ccc;
-            margin: 5px;
-            width: 250px;
+
+        /* Button container */
+        .button-container {
+            display: flex;
+            justify-content: space-between;
+            margin-top: 20px;
         }
     </style>
 </head>
 <body>
-    <h1>Select your flight</h1>
-    <div class="box">
-        
-        <input type="text" placeholder="Username"><br>
-        <input type="text" placeholder="Password"><br>
-        <a href="index2.html" class="button">Login</a>
-        <a href="next.html" class="button">Create Account</a>
+    <div class="container">
+        <h1>Select your flight</h1>
+        <input type="text" placeholder="Username">
+        <input type="text" placeholder="Password">
+        <div class="button-container">
+            <a href="index2.html" class="button">Login</a>
+            <a href="next.html" class="button" style="background-color: #2196F3;">Create Account</a>
+        </div>
     </div>
 </body>
 </html>
