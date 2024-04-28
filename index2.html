@@ -1,97 +1,128 @@
 <!DOCTYPE html>
 <html lang="en">
 <head>
-    <meta charset="UTF-8">
-    <meta name="viewport" content="width=device-width, initial-scale=1.0">
-    <title>Title and Button</title>
+  <meta charset="UTF-8">
+  <meta name="viewport" content="width=device-width, initial-scale=1.0">
+  <title>Flight Search</title>
+  <style>
+    body {
+      font-family: sans-serif;
+      margin: 0;
+      padding: 0;
+    }
 
-    <style>
-        body {
-            font-family: 'Roboto', sans-serif;
-            background-color: #f0f0f0;
-            margin: 0;
-            padding: 0;
-            display: flex;
-            justify-content: center;
-            align-items: center;
-            height: 100vh;
-        }
+    header {
+      background-color: #f0f0f0;
+      padding: 20px;
+      text-align: center;
+    }
 
-        .container {
-            max-width: 500px;
-            padding: 40px;
-            background-color: #fff;
-            border-radius: 10px;
-            box-shadow: 0 0 10px rgba(0, 0, 0, 0.1);
-            text-align: center;
-        }
+    h1 {
+      font-size: 24px;
+      margin-bottom: 5px;
+    }
 
-        h1 {
-            margin-bottom: 20px;
-            color: #333;
-        }
+    h2 {
+      font-size: 18px;
+      margin: 0;
+    }
 
-        .button-container {
-            display: flex;
-            justify-content: center;
-            margin-top: 30px;
-        }
+    main {
+      padding: 20px;
+    }
 
-        .button {
-            display: inline-block;
-            padding: 12px 24px;
-            background-color: #4caf50;
-            color: white;
-            border: none;
-            border-radius: 5px;
-            text-decoration: none;
-            font-size: 16px;
-            cursor: pointer;
-            transition: background-color 0.3s;
-            margin: 0 10px;
-        }
+    section {
+      margin-bottom: 20px;
+    }
 
-        .button:hover {
-            background-color: #45a049;
-        }
+    .search-section {
+      border: 1px solid #ddd;
+      padding: 20px;
+      border-radius: 5px;
+    }
 
-        .textbox-label {
-            display: block;
-            text-align: left;
-            margin-bottom: 5px;
-            color: #555;
-        }
+    .form-group {
+      margin-bottom: 10px;
+    }
 
-        .textbox {
-            padding: 12px;
-            border-radius: 5px;
-            border: 1px solid #ccc;
-            margin-bottom: 20px;
-            width: 100%;
-            box-sizing: border-box;
-            font-size: 16px;
-            transition: border-color 0.3s;
-        }
+    label {
+      display: block;
+      margin-bottom: 5px;
+    }
 
-        .textbox:focus {
-            outline: none;
-            border-color: #4CAF50;
-        }
-    </style>
+    select, input[type="date"] {
+      width: 100%;
+      padding: 10px;
+      border: 1px solid #ddd;
+      border-radius: 5px;
+    }
+
+    .search-button, .back-button {
+      display: inline-block;
+      padding: 10px 20px;
+      background-color: #333;
+      color: #fff;
+      border: none;
+      border-radius: 5px;
+      cursor: pointer;
+      text-decoration: none;
+      transition: background-color 0.3s;
+    }
+
+    .search-button:hover, .back-button:hover {
+      background-color: #111;
+    }
+
+    .upcoming-flights {
+      text-align: center;
+    }
+  </style>
 </head>
 <body>
-<div class="container">
-    <h1>Select dates of Flight</h1>
-    <label for="departure-date" class="textbox-label">Date of Departure:</label>
-    <input type="text" id="departure-date" class="textbox" placeholder="dd/mm/yyyy">
-
-    <label for="arrival-date" class="textbox-label">Date of Arrival:</label>
-    <input type="text" id="arrival-date" class="textbox" placeholder="dd/mm/yyyy">
-
-    <div class="button-container">
-        <a href="index3.html" class="button">Next</a>
-        <a href="index.html" class="button">Go back </a>
-    </div>
-</div>
+  <header>
+    <h1>Hi, User</h1>
+    <h2>Flight to Anywhere</h2>
+  </header>
+  <main>
+    <section class="search-section">
+      <h2>Search Flights</h2>
+      <form action="#">
+        <div class="form-group">
+          <label for="from">From:</label>
+          <select name="from" id="from">
+            <option value="JFK">John F Ken Airport (JFK)
+            </option>
+            <option value="LHR">Heathrow Airport (LHR)
+            </option>
+            <option value="SFO">SF Int Airport (SFO) </option>
+            <option value="ANC">Ted Steves Airport (ANC)</option>
+          </select>
+        </div>
+        <div class="form-group">
+          <label for="to">To:</label>
+          <select name="to" id="to">
+            <option value="LAX">Los Angeles International (LAX)</option>
+            <option value="CDG">Paris Charles Airport (CDG)</option>
+            <option value="LAS">Harry Reid Int Airport(LAS)</option>
+            <option value="DEN">Denver Int Airport (DEN)</option>
+          </select>
+        </div>
+        <div class="form-group">
+          <label for="departure">Departure:</label>
+          <input type="date" name="departure" id="departure" value="2023-03-23">
+        </div>
+        <div class="form-group">
+          <label for="return">Return:</label>
+          <input type="date" name="return" id="return" value="2023-03-27">
+        </div>
+        <a href="index3.html" class="search-button">Search</a>
+        <a href="index.html" class="back-button">Back</a>
+      </form>
+    </section>
+    <section class="upcoming-flights">
+      <h2>Upcoming Flights</h2>
+      <p>No upcoming flights found yet.</p>
+    </section>
+  </main>
 </body>
 </html>
