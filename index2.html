@@ -9,13 +9,14 @@
       body {
         font-family: 'Roboto', sans-serif;
         background-color: #f0f0f0;
-        margin: 0;
-        padding: 0;
+        margin: 30;
+        padding: 30;
       }
+      
       .container {
-        max-width: 600px;
-        margin: 50px auto;
-        padding: 20px;
+        max-width: 1200px;
+        margin: 100px auto;
+        padding: 80px;
         background-color: #fff;
         border-radius: 10px;
         box-shadow: 0 0 10px rgba(0,0,0,0.1);
@@ -26,7 +27,7 @@
       }
       .button {
         display: block;
-        width: 100%
+        width: calc(50% -10px);
         margin: 20px auto;
         padding: 15px;
         background-color: #4caf50;
@@ -37,6 +38,15 @@
         font-size: 16px;
         cursor: pointer;
         transition: background-color 0.3;
+        position: absolute;
+      }
+      .button:first-child {  /* Go back */
+        top: 10px;
+        left: 10px;
+      }
+      .button:last-child { /* Next Button */
+        bottom: 10px;
+        right: 10px;
       }
       button:hover {
         background-color: #45a049;
@@ -56,11 +66,13 @@
 <body>
   <div class="container">
     <h1>Select dates of Flight</h1>
-    <input type="text" class="textbox" placeholder="Enter departure date">
-    <input type="text" class="textbox" placeholder="Enter return date">
-    <a href="index.html" 
-    class="button">Go back</a>
-    <a href="index2.html"class="button">Next</a>
+    <label for="departure date" class="textbox-label">Date of Departure:</label>
+    <input type="text" class="textbox" placeholder="dd/mm/yyyy">
+    
+    <label for="arrival date" class="textbox-label">Date of Arrival:</label>
+    <input type="text" class="textbox" placeholder="dd/mm/yyyy">
+    <a href="index.html" class="button">Go back</a>
+    <a href="index3.html"class="button">Next</a>
   </div>
 </body>
 </html>
