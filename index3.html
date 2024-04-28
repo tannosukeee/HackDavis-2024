@@ -48,7 +48,7 @@
         display: block;
         margin: 0 auto;
         padding: 10px;
-        width: 250px;
+        width: calc(50% -70px);
         border: 1px solid #ccc;
         border-radius: 5px;
         margin-bottom: 10px;
@@ -56,10 +56,10 @@
       }
       .textbox-label {
         display: inline-block;
-        width: 120px; /* Adjust the width and add margin between boxes */
+        width: 150px; /* Adjust the width and add margin between boxes */
         text-align: left;
-        margin-right: 10px;
-        vertical-align: middle;
+        margin-right: 50px;
+        vertical-align: left;
       }
     </style>
 </head>
@@ -67,18 +67,15 @@
   <div class="container">
     <h1>Create a Account</h1>
     <div class="textbox-container">
-      <label for="first-name" class="textbox-label">First Name:</label>
-    <input type="text" class="textbox" placeholder="Enter First name">
-
-    <label for="last-name" class="textbox-label">Last Name:</label>
-    <input type="text" class="textbox" placeholder="Enter Last name">
+      <label for="first-name" class="textbox-label">Username:</label>
+    <input type="text" class="textbox" placeholder="Enter Username">
 
     <label for="enter-email" class="textbox-label">Email:</label>
     <input type="text" class="textbox" placeholder="Enter Email">
 
     <label for="enter-password" class="textbox-label">Password:</label>
     <input type="text" class="textbox" placeholder="Enter Password">
-      <label for="confirm-password" class="textbox-label">Reenter Password:</label>
+      <label for="confirm-password" class="textbox-label">Confirm Password:</label>
     <input type="text" class="textbox" placeholder="Confirm Password">
     </div>
     <a href="index2.html" 
