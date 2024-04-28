@@ -25,9 +25,9 @@
         color: #333;
       }
       .button {
-        display: block;
-        width: 100%
-        margin: 20px auto;
+        display: inline-block;
+        width: calc(50% - 10px)
+        margin: 20px 5px;
         padding: 15px;
         background-color: #4caf50;
         color: white;
@@ -41,6 +41,9 @@
       button:hover {
         background-color: #45a049;
       }
+      .textbox-container {
+        text-align: center;
+      }
       .textbox {
         display: block;
         margin: 0 auto;
@@ -51,15 +54,36 @@
         margin-bottom: 10px;
         font-size: 16px;
       }
+      .textbox-label {
+        display: inline-block;
+        width: 120px; /* Adjust the width and add margin between boxes */
+        text-align: left;
+        margin-right: 10px;
+        vertical-align: middle;
+      }
     </style>
 </head>
 <body>
   <div class="container">
     <h1>Create a Account</h1>
-    <input type="text" class="textbox" placeholder="Enter departure date">
-    <input type="text" class="textbox" placeholder="Enter return date">
-    <a href="index.html" 
+    <div class="textbox-container">
+      <label for="first-name" class="textbox-label">First Name:</label>
+    <input type="text" class="textbox" placeholder="Enter First name">
+
+    <label for="last-name" class="textbox-label">Last Name:</label>
+    <input type="text" class="textbox" placeholder="Enter Last name">
+
+    <label for="enter-email" class="textbox-label">Email:</label>
+    <input type="text" class="textbox" placeholder="Enter Email">
+
+    <label for="enter-password" class="textbox-label">Password:</label>
+    <input type="text" class="textbox" placeholder="Enter Password">
+      <label for="confirm-password" class="textbox-label">Reenter Password:</label>
+    <input type="text" class="textbox" placeholder="Confirm Password">
+    </div>
+    <a href="index2.html" 
     class="button">Next</a>
+    <a href="index.html" class="button">Cancel</a>
     </div>
 </body>
 </html>
