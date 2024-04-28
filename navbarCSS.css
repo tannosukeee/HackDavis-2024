@@ -1,0 +1,40 @@
+*{
+    margin: 0;
+    padding: 0;
+    box-sizing: border-box;
+    font-family: 'Poppins', sans-serif;
+
+}
+
+.side-nav{
+    width: 225px;
+    height: 100vh;
+    background: #0d74f5;
+    padding: 20px 30px;
+    
+}
+.logo{
+    display: block;
+    margin-bottom: 100px;
+    
+}
+.logo-img{
+    width: 150px;
+}
+.nav-links{
+    list-style: none;
+    position: relative;
+
+}
+.nav-links li{
+    padding: 20px 0;
+    
+}
+.nav-links li a{
+    color: #fff;
+    text-decoration: none;
+    padding: 10px 0;
+}
+.ticket-img {
+    width: 50px;
+}
