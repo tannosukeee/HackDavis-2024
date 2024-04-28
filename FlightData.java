@@ -1,26 +1,34 @@
 package Flight;
 
-import java.time.LocalDate;
-import java.util.Scanner;
-
 public class FlightData {
     private FlightDatabase database;
-    private Scanner scanner;
 
     public FlightData() {
         this.database = new FlightDatabase();
-        this.scanner = new Scanner(System.in);
-        initializeFlights(); // Initialize flights in the database
+        initializeFlights();
     }
 
     private void initializeFlights() {
-        FlightDetails flight1 = new FlightDetails("ABC123", "Airline 1", "JFK", "LAX",
-                LocalDate.of(2024, 5, 1), LocalDate.of(2024, 5, 15));
-        FlightDetails flight2 = new FlightDetails("XYZ456", "Airline 2", "LHR", "CDG",
-                LocalDate.of(2024, 5, 5), LocalDate.of(2024, 5, 20));
+        DepartureDate departureDate1 = new DepartureDate(1, 5, 2024);
+        ReturnDate returnDate1 = new ReturnDate(15, 5, 2024);
+        FlightDetails flight1 = new FlightDetails("ABC123", "Airline 1", "JFK", "LAX", departureDate1, returnDate1);
+
+        DepartureDate departureDate2 = new DepartureDate(5, 5, 2024);
+        ReturnDate returnDate2 = new ReturnDate(20, 5, 2024);
+        FlightDetails flight2 = new FlightDetails("XYZ456", "Airline 2", "LHR", "CDG", departureDate2, returnDate2);
+        
+        DepartureDate departureDate3 = new DepartureDate(9, 5, 2024);
+        ReturnDate returnDate3 = new ReturnDate(25, 5, 2024);
+        FlightDetails flight3 = new FlightDetails("ABC456", "Airline 3", "SFO", "LAS", departureDate3, returnDate3);
+
+        DepartureDate departureDate4 = new DepartureDate(13, 5, 2024);
+        ReturnDate returnDate4 = new ReturnDate(30, 5, 2024);
+        FlightDetails flight4 = new FlightDetails("XYZ789", "Airline 4", "ANC", "DEN", departureDate4, returnDate4);
 
         database.saveFlight(flight1);
         database.saveFlight(flight2);
+        database.saveFlight(flight3);
+        database.saveFlight(flight4);
     }
 
     public void addFlight(FlightDetails flight) {
@@ -32,26 +40,6 @@ public class FlightData {
     }
 
     public void getFlightsByDate() {
-        System.out.println("Enter the date of departure (YYYY-MM-DD): ");
-        String inputDateStr = scanner.nextLine();
-        LocalDate inputDate = LocalDate.parse(inputDateStr);
-
-        // Example query to get flights on a specific date
-        // You would typically replace this with a database query
-        FlightDetails flight1 = new FlightDetails("ABC123", "Airline 1", "JFK", "LAX",
-                LocalDate.of(2024, 5, 1), LocalDate.of(2024, 5, 15));
-        FlightDetails flight2 = new FlightDetails("XYZ456", "Airline 2", "LHR", "CDG",
-                LocalDate.of(2024, 5, 5), LocalDate.of(2024, 5, 20));
-
-        if (inputDate.isEqual(flight1.getDepartureDate()) || inputDate.isEqual(flight2.getDepartureDate())) {
-            System.out.println("Available flights on " + inputDate + ":");
-            System.out.println("1. " + flight1.getFlightCode() + " - " + flight1.getAirline() +
-                    " - " + flight1.getDepartureCity() + " to " + flight1.getArrivalCity());
-            System.out.println("2. " + flight2.getFlightCode() + " - " + flight2.getAirline() +
-                    " - " + flight2.getDepartureCity() + " to " + flight2.getArrivalCity());
-        } else {
-            System.out.println("No flights available on " + inputDate);
-        }
     }
 
     public static void main(String[] args) {
