@@ -11,9 +11,9 @@ public class FlightDatabase {
 
     public FlightDatabase() {
         try {
-            String url = "jdbc:mysql://localhost:3306/your_database";
-            String username = "your_username";
-            String password = "your_password";
+            String url = "jdbc:mysql://localhost:3306/flight";
+            String username = "root";
+            String password = "Tanblowsurmind@";
             connection = DriverManager.getConnection(url, username, password);
         } catch (SQLException e) {
             System.err.println("Error connecting to database: " + e.getMessage());
@@ -28,8 +28,8 @@ public class FlightDatabase {
             statement.setString(2, flight.getAirline());
             statement.setString(3, flight.getDepartureCity());
             statement.setString(4, flight.getArrivalCity());
-            statement.setDate(5, java.sql.Date.valueOf(flight.getDepartureDate()));
-            statement.setDate(6, java.sql.Date.valueOf(flight.getReturnDate()));
+            statement.setDate(5, java.sql.Date.valueOf(flight.getDepartureDate().getYear() + "-" + flight.getDepartureDate().getMonth() + "-" + flight.getDepartureDate().getDay()));
+            statement.setDate(6, java.sql.Date.valueOf(flight.getReturnDate().getYear() + "-" + flight.getReturnDate().getMonth() + "-" + flight.getReturnDate().getDay()));
             statement.executeUpdate();
             System.out.println("Flight saved to database: " + flight.getFlightCode());
         } catch (SQLException e) {
@@ -50,8 +50,8 @@ public class FlightDatabase {
                         resultSet.getString("airline"),
                         resultSet.getString("departure_city"),
                         resultSet.getString("arrival_city"),
-                        resultSet.getDate("departure_date").toLocalDate(),
-                        resultSet.getDate("return_date").toLocalDate()
+                        new DepartureDate(resultSet.getDate("departure_date").toLocalDate().getDayOfMonth(), resultSet.getDate("departure_date").toLocalDate().getMonthValue(), resultSet.getDate("departure_date").toLocalDate().getYear()),
+                        new ReturnDate(resultSet.getDate("return_date").toLocalDate().getDayOfMonth(), resultSet.getDate("return_date").toLocalDate().getMonthValue(), resultSet.getDate("return_date").toLocalDate().getYear())
                 );
             }
         } catch (SQLException e) {
